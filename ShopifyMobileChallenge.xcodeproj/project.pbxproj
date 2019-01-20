@@ -89,6 +89,7 @@
 		ABB0817621F3E60800ED0D2C /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
 		ABB0817821F3EE2800ED0D2C /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		ABB0817A21F3EFCC00ED0D2C /* ProductListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCell.swift; sourceTree = "<group>"; };
+		ABB0817D21F43BC600ED0D2C /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
 		ACC7452DACCCD586290C33C3 /* Pods-ShopifyMobileChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShopifyMobileChallengeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShopifyMobileChallengeTests/Pods-ShopifyMobileChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		BC80814679BE6142C5F02E69 /* Pods_ShopifyMobileChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShopifyMobileChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCE5928AC7263CD6FD573342 /* Pods-ShopifyMobileChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShopifyMobileChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShopifyMobileChallenge/Pods-ShopifyMobileChallenge.release.xcconfig"; sourceTree = "<group>"; };
@@ -171,6 +172,7 @@
 		AB48245C21F1897900E339C4 /* ShopifyMobileChallenge */ = {
 			isa = PBXGroup;
 			children = (
+				ABB0817C21F43B6C00ED0D2C /* Fonts */,
 				ABA19E1721F2F84A0015C17B /* Services */,
 				ABA19E0E21F2F1F50015C17B /* Models */,
 				AB6ACCFD21F1AF900074BFC0 /* View Models */,
@@ -269,6 +271,14 @@
 				ABA19E1821F2F8850015C17B /* CollectionsAPIManager.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		ABB0817C21F43B6C00ED0D2C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				ABB0817D21F43BC600ED0D2C /* fontawesome-webfont.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -433,12 +443,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-ShopifyMobileChallenge/Pods-ShopifyMobileChallenge-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/FontAwesome.swift/FontAwesome_swift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesome_swift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

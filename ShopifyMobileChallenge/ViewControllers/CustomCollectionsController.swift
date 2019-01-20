@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import FontAwesome_swift
 
 
 class CustomCollectionsController: UIViewController {
@@ -24,7 +25,9 @@ class CustomCollectionsController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .white
+        setUpView()
+        
+        
         view.addSubview(collectionView)
 
         // Fetch the Collection List
@@ -43,8 +46,32 @@ class CustomCollectionsController: UIViewController {
                 self.collectionsDataSource = datasource
                 self.collectionView.dataSource = self.collectionsDataSource
                 self.collectionView.delegate = self
+                // f2bd
             }
         }
+    }
+
+    fileprivate func setUpView() {
+        if #available(iOS 11.0, *) {
+            navigationController?.navigationBar.prefersLargeTitles = true
+            //navigationItem.largeTitleDisplayMode = .automatic
+            navigationItem.title = "Home"
+        }
+        let userIcon = UIImage.fontAwesomeIcon(name: .userCircle, style: .solid, textColor: .gray, size: CGSize(width: 40, height: 40))
+
+        let rightBarButtonItem: UIBarButtonItem = {
+            let x = UIBarButtonItem(image: userIcon, style: UIBarButtonItem.Style.plain, target: self, action: nil)
+            return x
+        }()
+
+        view.backgroundColor = .white
+        navigationController?.navigationBar.tintColor = .black
+        navigationItem.rightBarButtonItem = rightBarButtonItem
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationItem.rightBarButtonItem?.setTitlePositionAdjustment(.init(horizontal: 10, vertical: 20), for: UIBarMetrics.default)
     }
 
     override func viewWillLayoutSubviews() {
@@ -67,6 +94,8 @@ extension CustomCollectionsController: UICollectionViewDelegate, UICollectionVie
         DispatchQueue.main.async {
             let vc = CollectionDetailsController()
             self.navigationController?.pushViewController(vc, animated: true)
+            //self.navigationController?.navigationBar.topItem?.title = cell.title
+
             CollectionsAPIManager.fetchCollects(collectionId: cell.collectionID) { (collects, error) in
                 if (error == nil) {
                     // Turn the Int IDs into a comma separated String

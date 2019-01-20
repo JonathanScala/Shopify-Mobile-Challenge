@@ -12,7 +12,7 @@ import UIKit
 class CollectionListCell: UICollectionViewCell {
     fileprivate let imageView: UIImageView = {
         let view = UIImageView()
-        view.contentMode = .scaleAspectFill
+        view.contentMode = .scaleAspectFit
         view.clipsToBounds = true
         return view
     }()

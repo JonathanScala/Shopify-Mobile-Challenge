@@ -20,11 +20,16 @@ class CollectionDetailsController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if #available(iOS 11.0, *) {
+            navigationItem.largeTitleDisplayMode = .never
+        }
         tableView.backgroundColor = .white
 
         collectionsDataSource = TableViewDataSource(dataSource: products?.products ?? [], reuseIdentifier: "ProductCell", cellSetup: { (model: Product, cell: ProductListCell) in
             cell.productTitle = model.title
             cell.collectionTitle = model.product_type
+            cell.updatedTitle = model.updated_at
+            cell.inventoryTitle = String(describing: model.variants.compactMap({ $0 }).reduce(0) {$0 + $1.inventory_quantity})
             CollectionsAPIManager.fetchImage(url: model.image.src, completion: { (image, error) in
                 if error == nil {
                     cell.productImage = image
@@ -38,5 +43,5 @@ class CollectionDetailsController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
     }
-    
+
 }

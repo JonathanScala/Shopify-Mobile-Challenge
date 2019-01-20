@@ -35,6 +35,22 @@ class ProductListCell: UITableViewCell {
         return label
     }()
 
+    fileprivate let inventoryLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .gray
+        label.font = UIFont.systemFont(ofSize: 13)
+        label.textAlignment = .left
+        return label
+    }()
+
+    fileprivate let updatedLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .gray
+        label.font = UIFont.systemFont(ofSize: 13)
+        label.textAlignment = .left
+        return label
+    }()
+
     public var productImage: UIImage? {
         didSet {
             productImageView.image = productImage
@@ -53,11 +69,35 @@ class ProductListCell: UITableViewCell {
         }
     }
 
+    public var inventoryTitle: String? {
+        didSet {
+            inventoryLabel.text = "Inventory: \(inventoryTitle!)"
+        }
+    }
+
+    public var updatedTitle: String? {
+        didSet {
+            let dateFormatterGet = DateFormatter()
+            dateFormatterGet.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+
+            let dateFormatterSet = DateFormatter()
+            dateFormatterSet.dateFormat = "MMM dd,yyyy"
+
+            if let date = dateFormatterGet.date(from: updatedTitle!) {
+                updatedLabel.text = "Last Updated \(dateFormatterSet.string(from: date))"
+            } else {
+                print("There was an error decoding the string")
+            }
+        }
+    }
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         addSubview(productImageView)
         addSubview(productTitleLabel)
         addSubview(collectionTitleLabel)
+        addSubview(inventoryLabel)
+        addSubview(updatedLabel)
     }
 
     override func layoutSubviews() {
@@ -77,7 +117,16 @@ class ProductListCell: UITableViewCell {
         collectionTitleLabel.topAnchor.constraint(equalTo: productTitleLabel.bottomAnchor).isActive = true
         collectionTitleLabel.leftAnchor.constraint(equalTo: productImageView.rightAnchor).isActive = true
         collectionTitleLabel.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 2 / 3).isActive = true
-        
+
+        updatedLabel.translatesAutoresizingMaskIntoConstraints = false
+        updatedLabel.topAnchor.constraint(equalTo: collectionTitleLabel.bottomAnchor).isActive = true
+        updatedLabel.leftAnchor.constraint(equalTo: productImageView.rightAnchor).isActive = true
+        updatedLabel.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 2 / 3).isActive = true
+
+        inventoryLabel.translatesAutoresizingMaskIntoConstraints = false
+        inventoryLabel.topAnchor.constraint(equalTo: updatedLabel.bottomAnchor).isActive = true
+        inventoryLabel.leftAnchor.constraint(equalTo: productImageView.rightAnchor).isActive = true
+        inventoryLabel.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1 / 3).isActive = true
     }
 
 

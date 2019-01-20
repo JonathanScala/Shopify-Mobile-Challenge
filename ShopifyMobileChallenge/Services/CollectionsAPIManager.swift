@@ -11,6 +11,7 @@ import Alamofire
 
 
 class CollectionsAPIManager {
+    static let imageCache = NSCache<NSString, UIImage>()
     class func fetchCollections(completion: @escaping (_ collections: CustomCollections?, _ error: Error?) -> Void) {
         guard let url = URL(string: ShopifyLinks.collectionsList.description) else {
             return
@@ -59,10 +60,21 @@ class CollectionsAPIManager {
     }
 
     class func fetchImage(url: String, completion: @escaping (_ image: UIImage?, _ error: Error?) -> Void) {
+        // Cache the images downloaded
+        if let image = imageCache.object(forKey: url as NSString) {
+            DispatchQueue.main.async {
+                completion(image, nil)
+            }
+            return
+        }
         AF.download(url).responseData { response in
             switch response.result {
             case .success:
-                completion(UIImage(data: response.result.value!), nil)
+                DispatchQueue.main.async {
+                    let image = UIImage(data: response.result.value!)
+                    imageCache.setObject(image!, forKey: url as NSString)
+                    completion(image, nil)
+                }
             case .failure:
                 print("Failed to fetch image with error: \(String(describing: response.result.error?.localizedDescription))")
                 completion(nil, response.result.error)
@@ -76,7 +88,9 @@ class CollectionsAPIManager {
             decoder.keyDecodingStrategy = .useDefaultKeys
             let collection = try decoder.decode(T.self, from: json)
             // Pass the Decoded JSON as a Model
-            completion(collection, nil)
+            DispatchQueue.main.async {
+                completion(collection, nil)
+            }
         } catch let error {
             print("Error Decoding JSON: \(error)")
             // Decoding Error
