@@ -60,26 +60,28 @@ class CollectionListCell: UICollectionViewCell {
 
     override init(frame: CGRect) {
         super.init(frame: frame)
+        self.addSubview(blurView)
         self.addSubview(imageView)
         self.addSubview(titleLabel)
-        self.insertSubview(blurView, at: 0)
-        //self.backgroundColor = .darkValue
     }
 
     override func layoutSubviews() {
         super.layoutSubviews()
+        // ImageView Constraints
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
         imageView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
         imageView.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
         imageView.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 3 / 4).isActive = true
 
+        // Collection Title Label Constraints
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         titleLabel.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
         titleLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor).isActive = true
         titleLabel.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 1 / 4).isActive = true
         titleLabel.widthAnchor.constraint(equalTo: self.widthAnchor).isActive = true
 
+        // BlurView Constraints
         blurView.translatesAutoresizingMaskIntoConstraints = false
         blurView.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
         blurView.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
@@ -90,10 +92,4 @@ class CollectionListCell: UICollectionViewCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-}
-
-extension UIColor {
-    static let darkValue = UIColor(red: 0x36/255.0, green: 0x39/255.0, blue: 0x3E/255.0, alpha: 1.0)
-    static let lightBlue = UIColor(red: 0x24/255, green: 0xAB/255, blue: 0xFF/255, alpha: 1.0)
-    static let darkBackground = UIColor(red: 0x46/255.0, green: 0x4A/255.0, blue: 0x4F/255.0, alpha: 1.0)
 }
