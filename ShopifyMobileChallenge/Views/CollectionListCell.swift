@@ -27,8 +27,7 @@ class CollectionListCell: UICollectionViewCell {
 
     public var image: UIImage? {
         didSet {
-            imageView.tintColor = .gray
-            imageView.image = image?.withRenderingMode(.alwaysTemplate)
+            imageView.image = image
         }
     }
 

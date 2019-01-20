@@ -30,6 +30,8 @@
 		ABB0817321F3E5DE00ED0D2C /* ProductOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB0817221F3E5DE00ED0D2C /* ProductOption.swift */; };
 		ABB0817521F3E5F200ED0D2C /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB0817421F3E5F200ED0D2C /* Image.swift */; };
 		ABB0817721F3E60800ED0D2C /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB0817621F3E60800ED0D2C /* Products.swift */; };
+		ABB0817921F3EE2800ED0D2C /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB0817821F3EE2800ED0D2C /* TableViewDataSource.swift */; };
+		ABB0817B21F3EFCC00ED0D2C /* ProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB0817A21F3EFCC00ED0D2C /* ProductListCell.swift */; };
 		AF8F4951B53A5906C66C03C1 /* Pods_ShopifyMobileChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0781569908CA0E73A3E1F397 /* Pods_ShopifyMobileChallengeUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -85,6 +87,8 @@
 		ABB0817221F3E5DE00ED0D2C /* ProductOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductOption.swift; sourceTree = "<group>"; };
 		ABB0817421F3E5F200ED0D2C /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		ABB0817621F3E60800ED0D2C /* Products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Products.swift; sourceTree = "<group>"; };
+		ABB0817821F3EE2800ED0D2C /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
+		ABB0817A21F3EFCC00ED0D2C /* ProductListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCell.swift; sourceTree = "<group>"; };
 		ACC7452DACCCD586290C33C3 /* Pods-ShopifyMobileChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShopifyMobileChallengeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShopifyMobileChallengeTests/Pods-ShopifyMobileChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		BC80814679BE6142C5F02E69 /* Pods_ShopifyMobileChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShopifyMobileChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCE5928AC7263CD6FD573342 /* Pods-ShopifyMobileChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShopifyMobileChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShopifyMobileChallenge/Pods-ShopifyMobileChallenge.release.xcconfig"; sourceTree = "<group>"; };
@@ -228,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				AB6ACCFB21F1AA0E0074BFC0 /* CollectionListCell.swift */,
+				ABB0817A21F3EFCC00ED0D2C /* ProductListCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -236,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				AB6ACCFE21F1AFAF0074BFC0 /* CollectionViewDataSource.swift */,
+				ABB0817821F3EE2800ED0D2C /* TableViewDataSource.swift */,
 			);
 			path = "View Models";
 			sourceTree = "<group>";
@@ -490,6 +496,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABB0817921F3EE2800ED0D2C /* TableViewDataSource.swift in Sources */,
 				AB48246021F1897900E339C4 /* CustomCollectionsController.swift in Sources */,
 				AB48249221F18FB300E339C4 /* enums.swift in Sources */,
 				AB6ACCFF21F1AFAF0074BFC0 /* CollectionViewDataSource.swift in Sources */,
@@ -503,6 +510,7 @@
 				AB48245E21F1897900E339C4 /* AppDelegate.swift in Sources */,
 				ABB0817521F3E5F200ED0D2C /* Image.swift in Sources */,
 				AB6ACCFC21F1AA0E0074BFC0 /* CollectionListCell.swift in Sources */,
+				ABB0817B21F3EFCC00ED0D2C /* ProductListCell.swift in Sources */,
 				ABA19E1D21F337560015C17B /* Collects.swift in Sources */,
 				ABA19E0D21F2F12F0015C17B /* Collect.swift in Sources */,
 				ABA19E1921F2F8850015C17B /* CollectionsAPIManager.swift in Sources */,

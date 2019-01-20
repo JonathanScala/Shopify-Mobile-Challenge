@@ -65,7 +65,7 @@ extension CustomCollectionsController: UICollectionViewDelegate, UICollectionVie
             return
         }
         DispatchQueue.main.async {
-            let vc = CollectionDetailsController(collectionViewLayout: UICollectionViewFlowLayout())
+            let vc = CollectionDetailsController()
             self.navigationController?.pushViewController(vc, animated: true)
             CollectionsAPIManager.fetchCollects(collectionId: cell.collectionID) { (collects, error) in
                 if (error == nil) {
