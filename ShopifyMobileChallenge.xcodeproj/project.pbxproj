@@ -32,9 +32,6 @@
 		ABB0817721F3E60800ED0D2C /* Products.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB0817621F3E60800ED0D2C /* Products.swift */; };
 		ABB0817921F3EE2800ED0D2C /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB0817821F3EE2800ED0D2C /* TableViewDataSource.swift */; };
 		ABB0817B21F3EFCC00ED0D2C /* ProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB0817A21F3EFCC00ED0D2C /* ProductListCell.swift */; };
-		ABB0818221F451F500ED0D2C /* Simulator Screen Shot - iPhone XS - 2019-01-20 at 01.48.54.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB0817F21F451F500ED0D2C /* Simulator Screen Shot - iPhone XS - 2019-01-20 at 01.48.54.png */; };
-		ABB0818321F451F500ED0D2C /* Simulator Screen Shot - iPhone XS - 2019-01-20 at 01.48.34.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB0818021F451F500ED0D2C /* Simulator Screen Shot - iPhone XS - 2019-01-20 at 01.48.34.png */; };
-		ABB0818421F451F500ED0D2C /* Simulator Screen Shot - iPhone XS - 2019-01-20 at 01.49.19.png in Resources */ = {isa = PBXBuildFile; fileRef = ABB0818121F451F500ED0D2C /* Simulator Screen Shot - iPhone XS - 2019-01-20 at 01.49.19.png */; };
 		AF8F4951B53A5906C66C03C1 /* Pods_ShopifyMobileChallengeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0781569908CA0E73A3E1F397 /* Pods_ShopifyMobileChallengeUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -93,9 +90,6 @@
 		ABB0817821F3EE2800ED0D2C /* TableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		ABB0817A21F3EFCC00ED0D2C /* ProductListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCell.swift; sourceTree = "<group>"; };
 		ABB0817D21F43BC600ED0D2C /* fontawesome-webfont.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "fontawesome-webfont.ttf"; sourceTree = "<group>"; };
-		ABB0817F21F451F500ED0D2C /* Simulator Screen Shot - iPhone XS - 2019-01-20 at 01.48.54.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPhone XS - 2019-01-20 at 01.48.54.png"; sourceTree = "<group>"; };
-		ABB0818021F451F500ED0D2C /* Simulator Screen Shot - iPhone XS - 2019-01-20 at 01.48.34.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPhone XS - 2019-01-20 at 01.48.34.png"; sourceTree = "<group>"; };
-		ABB0818121F451F500ED0D2C /* Simulator Screen Shot - iPhone XS - 2019-01-20 at 01.49.19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPhone XS - 2019-01-20 at 01.49.19.png"; sourceTree = "<group>"; };
 		ACC7452DACCCD586290C33C3 /* Pods-ShopifyMobileChallengeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShopifyMobileChallengeTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShopifyMobileChallengeTests/Pods-ShopifyMobileChallengeTests.release.xcconfig"; sourceTree = "<group>"; };
 		BC80814679BE6142C5F02E69 /* Pods_ShopifyMobileChallenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShopifyMobileChallenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BCE5928AC7263CD6FD573342 /* Pods-ShopifyMobileChallenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShopifyMobileChallenge.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShopifyMobileChallenge/Pods-ShopifyMobileChallenge.release.xcconfig"; sourceTree = "<group>"; };
@@ -178,7 +172,6 @@
 		AB48245C21F1897900E339C4 /* ShopifyMobileChallenge */ = {
 			isa = PBXGroup;
 			children = (
-				ABB0817E21F451D100ED0D2C /* Images */,
 				ABB0817C21F43B6C00ED0D2C /* Fonts */,
 				ABA19E1721F2F84A0015C17B /* Services */,
 				ABA19E0E21F2F1F50015C17B /* Models */,
@@ -286,16 +279,6 @@
 				ABB0817D21F43BC600ED0D2C /* fontawesome-webfont.ttf */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		ABB0817E21F451D100ED0D2C /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				ABB0818021F451F500ED0D2C /* Simulator Screen Shot - iPhone XS - 2019-01-20 at 01.48.34.png */,
-				ABB0817F21F451F500ED0D2C /* Simulator Screen Shot - iPhone XS - 2019-01-20 at 01.48.54.png */,
-				ABB0818121F451F500ED0D2C /* Simulator Screen Shot - iPhone XS - 2019-01-20 at 01.49.19.png */,
-			);
-			path = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,9 +390,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB48246521F1897A00E339C4 /* Assets.xcassets in Resources */,
-				ABB0818321F451F500ED0D2C /* Simulator Screen Shot - iPhone XS - 2019-01-20 at 01.48.34.png in Resources */,
-				ABB0818421F451F500ED0D2C /* Simulator Screen Shot - iPhone XS - 2019-01-20 at 01.49.19.png in Resources */,
-				ABB0818221F451F500ED0D2C /* Simulator Screen Shot - iPhone XS - 2019-01-20 at 01.48.54.png in Resources */,
 				AB48248F21F18C7000E339C4 /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
