@@ -14,7 +14,7 @@ import FontAwesome_swift
 class CustomCollectionsController: UIViewController {
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
-        layout.minimumLineSpacing = 0
+        layout.minimumLineSpacing = 10
         let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
         cv.backgroundColor = .clear
         cv.register(CollectionListCell.self, forCellWithReuseIdentifier: "Cell")
@@ -111,6 +111,6 @@ extension CustomCollectionsController: UICollectionViewDelegate, UICollectionVie
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 300)
+        return CGSize(width: collectionView.frame.width - 20, height: 200)
     }
 }
